@@ -92,22 +92,19 @@ const perguntas = [
       },
 ]
 
-const quiz = document.querySelector('#quiz') // Vou pegar a div com a classe 'quiz' no HTML.
-const template = document.querySelector('template') // Documente serve para modelar o meu documento para JS.
+const quiz = document.querySelector('#quiz') 
+const template = document.querySelector('template') 
 
-const corretas = new Set() // No Set posso armazenar e tirar informações, e vai armazena-la sem repeti-la.
-const totalPerguntas = perguntas.length // Vai me retornar o número total de perguntas.
+const corretas = new Set() 
+const totalPerguntas = perguntas.length 
 const mostrarTotal = document.querySelector('#acertos span')
 
 
- for(const item of perguntas){ // Significa: Para cada item de perguntas, eu entro no bloco(escopo) de código abaixo. O for cria a variável 'item'.
+ for(const item of perguntas){ 
 
-    const quisItem = template.content.cloneNode(true) // Vou pegar o conteúdo do template e clonar ele. O conteúdo do template é o que está dentro da tag <template> no HTML. O cloneNode serve para clonar um nó(tag), ou seja, um elemento do DOM, uma tag html. O cloneNode() método cria um clone do nó atual, e todos os seus atributos e filhos. Coloquei o 'true' para clonar tudo que está dentro do template.
+    const quisItem = template.content.cloneNode(true)
 
-    // cloneNode serve para clonar um nó, ou seja, um elemento do DOM, uma tag html. O cloneNode() método cria um clone do nó atual, e todos os seus atributos e filhos.
-
-    quisItem.querySelector('h3').textContent = item.pergunta // Vou pegar o h2 dentro do quisItem e adicionar o texto da pergunta do item. Por causa disso, consigo mudar o titulo de cada pergunta específica.
-
+    quisItem.querySelector('h3').textContent = item.pergunta 
     for(let resposta of item.respostas){ 
 
         const dt = quisItem.querySelector('dl dt').cloneNode(true) 
