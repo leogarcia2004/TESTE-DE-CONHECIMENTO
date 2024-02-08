@@ -121,7 +121,7 @@ const mostrarTotal = document.querySelector('#acertos span')
             corretas.add(item) 
             }
 
-            mostrarTotal.textContent = corretas.size + 'de' + totalPerguntas
+            mostrarTotal.textContent = corretas.size + ' de ' + totalPerguntas
         }
 
         quisItem.querySelector('dl').appendChild(dt)
